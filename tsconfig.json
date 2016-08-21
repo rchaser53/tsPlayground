@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "noImplicitAny": false,
+    "removeComments": false,
+    "noLib": false,
+    "target": "es6",
+    "allowJs":false,
+    "jsx": "react",
+    "module": "ES2015",
+    "experimentalDecorators": true,
+    "declaration":true
+  },
+  "compileOnSave":false,
+  "files": [
+    "src/declare.d.ts",
+    "typings/index.d.ts"
+  ]
+}
