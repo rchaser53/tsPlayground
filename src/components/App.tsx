@@ -7,6 +7,15 @@ const tempStyle = {
 	backgroundColor:"aqua"
 }
 
+const piyo:poyo = {
+	aaa:"ss",
+	bbb:23
+};
+
+const abc:abc = "24";
+
+console.log(piyo)
+
 export class App<S,T> extends React.Component<{}, {}>{
 	render(){
 		return (<div style={tempStyle} onClick={()=>{

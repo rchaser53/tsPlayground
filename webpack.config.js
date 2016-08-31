@@ -8,7 +8,7 @@ module.exports = {
   devtool: 'source-map',
   context: path.resolve(__dirname),
   entry: [
-    './src/Studio.tsx'
+    './src/test.tsx'
   ],
   output: {
     path: path.join(__dirname, '/workplace/'),
