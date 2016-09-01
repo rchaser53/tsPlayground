@@ -29,14 +29,16 @@ class FormStore extends ReduceStore<any,any> {
 		};
 	}
 
-	reduce(state, action) {
+	reduce(_state, action) {
 		switch (action.type) {
 		case act.SEND:
 			return {
 				'value': action.value
 				};
-    	}
+    }
+    return;
 	}
+
 };
 
 // Storeのインスタンス生成
@@ -94,8 +96,9 @@ class FormDisplay extends React.Component<any,any> {
 // Container
 const FormAppContainer = Container.create(FormApp);
 
+
 // ReactDom
 render(
   <FormAppContainer />,
-  document.getElementById('redux-app')
+  document.querySelector('#redux-app')
 );
