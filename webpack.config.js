@@ -41,7 +41,7 @@ module.exports = {
     {
       test: /\.(ts|tsx)?$/,
       exclude: /node_modules/,
-      loaders:['babel','awesome-typescript-loader']
+      loaders:['babel','ts']
     },
     {
       test: /\.json?$/,

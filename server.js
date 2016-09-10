@@ -4,7 +4,6 @@ import webpack from 'webpack';
 import webpackMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
 import config from './webpack.config.js';
-var jsforceAjaxProxy = require('jsforce-ajax-proxy/lib/proxy');
 
 const isDeveloping = process.env.NODE_ENV !== 'production';
 const port = isDeveloping ? 3000 : process.env.PORT;
@@ -30,12 +29,6 @@ if (isDeveloping) {
 
   app.use(webpackHotMiddleware(compiler));
 }
-
-app.all('/proxy/?*', jsforceAjaxProxy({ enableCORS: true }));
-
-app.get('/', function(req, res) {
-  res.send('JSforce AJAX Proxy');
-});
 
 app.get('*', function response(req, res) {
   res.sendFile(path.join(__dirname, 'workplace/index.html'));
