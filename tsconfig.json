@@ -6,7 +6,7 @@
     "target": "es6",
     "allowJs":false,
     "jsx": "react",
-    "module": "es2015",
+    "module": "es6",
     "experimentalDecorators": true,
     "declaration":true,
     "strictNullChecks": true,
@@ -17,11 +17,10 @@
     "forceConsistentCasingInFileNames": true
   },
   "compileOnSave":false,
-  "include":["src/**/*"],
   "exclude":["node_modules"],
-
+  "lib":["es2015.promise","es2016.array.include"],
   "files": [
-    "src/declare.d.ts",
+    "src/lib.d.ts",
     "typings/index.d.ts"
   ]
 }
