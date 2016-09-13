@@ -1,26 +1,19 @@
-// import * as React from 'react';
+import * as React from 'react';
+import {
+	outer,
+	tomatoBody,
+	calyxOuter,
+	tomatoMsg
+} from '../../css/App.css';
 
-// const tempStyle = {
-// 	width:150,
-// 	height:150,
-// 	display:"block",
-// 	backgroundColor:"aqua"
-// }
-
-// const piyo:poyo = {
-// 	aaa:"ss",
-// 	bbb:23
-// };
-
-// const abc:abc = "24";
-
-// console.log(piyo)
-
-// export class App<S,T> extends React.Component<{}, {}>{
-// 	render(){
-// 		return (<div style={tempStyle} onClick={()=>{
-// 			console.log(222)
-// 		}} />);
-// 	}
-// }
-// export default App;
+export class App extends React.Component<{}, {}>{
+	render(){
+		return (<div className={outer}>
+					<div className={calyxOuter}></div>
+					<div className={tomatoBody}>
+						<p className={tomatoMsg}>pomodoro</p>
+					</div>
+				</div>);
+	}
+}
+export default App;

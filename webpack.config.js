@@ -8,7 +8,7 @@ module.exports = {
   devtool: 'source-map',
   context: path.resolve(__dirname),
   entry: [
-    './src/test.tsx'
+    './src/Studio.tsx'
   ],
   output: {
     path: path.join(__dirname, '/workplace/'),
@@ -48,7 +48,9 @@ module.exports = {
       loader: 'json'
     },
     {
-      test: /\.css?$/, loader: "style-loader!css-loader"
+      test: /\.css?$/, 
+      exclude: /node_modules/,
+      loaders: ['style', 'css?modules']
     }]
   }
 };

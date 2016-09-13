@@ -1,0 +1,31 @@
+.outer{
+	width:250px;
+	height:250px;
+	position:relative;
+}
+
+.tomatoBody{
+	display:flex;
+	width:250px;
+	height:200px;
+	border-radius:50%;
+	background-color:red;
+	justify-content:center;
+	align-items:center;
+}
+
+.calyxOuter{
+	width:100px;
+	height:50px;
+	display:block;
+	position:absolute;
+	top:10px;
+	left:0%;
+	right:0%;
+	margin:auto;
+}
+
+.tomatoMsg{
+	font-size:26px;
+	font-weight:bold;
+}
