@@ -16,32 +16,37 @@ module.exports = {
     publicPath: '/'
   },
   resolve: {
-    extensions: ['','.css','.ts','.tsx', '.js','.jsx', '.json', '.html']
+    extensions: ['.css','.ts','.tsx', '.js','.jsx', '.json', '.html', '.poyo']
+  },
+  devServer: {
+    contentBase: 'dist',
+    port: 3000
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'index.html',
-      inject: 'body',
-      filename: 'index.html'
+    template: 'index.html',
+    inject: 'body',
+    filename: 'index.html'
     }),
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('development')
+    'process.env.NODE_ENV': JSON.stringify('development')
     })
   ],
   node:{
     fs:'empty',
     json:'empty',
-    console:true
+    console:true,
+    net:"empty"
   },
   module: {
     loaders: [
     {
       test: /\.(ts|tsx)?$/,
       exclude: /node_modules/,
-      loaders:['babel','ts']
+      loader:'ts'
     },
     {
       test: /\.json?$/,
