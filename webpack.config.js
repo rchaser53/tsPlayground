@@ -56,6 +56,11 @@ module.exports = {
       test: /\.css?$/, 
       exclude: /node_modules/,
       loaders: ['style', 'css?modules']
-    }]
+    },
+	{
+		test: /\.(ts|tsx)?$/,
+		exclude: /node_modules/,
+		loader:require.resolve('./test-loader')
+	}]
   }
 };

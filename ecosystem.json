@@ -1,0 +1,39 @@
+{
+  /**
+   * Application configuration section
+   * http://pm2.keymetrics.io/docs/usage/application-declaration/
+   */
+  apps : [
+
+    // First application
+    {
+      name      : "API",
+      script    : "app.js",
+      env: {
+        COMMON_VARIABLE: "true"
+      },
+      env_production : {
+        NODE_ENV: "production"
+      }
+    }
+  ],
+
+  /**
+   * Deployment section
+   * http://pm2.keymetrics.io/docs/usage/deployment/
+   */
+  deploy : {
+    production : {
+        user : "ubuntu",
+        host : "52.37.61.40",
+        key :  "id_rsa",
+        ref  : "origin/master",
+        repo : "git@github.com:rchaser53/tsPlayground.git",
+        path : "/home/ubuntu/",
+        "post-deploy" : "npm install && pm2 startOrRestart ecosystem.json --env production",
+        env_production : {
+            NODE_ENV: "production"
+        }
+    }
+  }
+}

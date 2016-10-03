@@ -1,3 +1,7 @@
 node_modules
 typings
 doc
+npm-debug.log*
+firebase.config.ts
+id_rsa
+*.pub
