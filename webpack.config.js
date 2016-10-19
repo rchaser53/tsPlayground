@@ -3,12 +3,13 @@
 const path = require("path");
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ForkCheckerPlugin = require('awesome-typescript-loader').ForkCheckerPlugin;
 
 module.exports = {
   devtool: 'source-map',
   context: path.resolve(__dirname),
   entry: [
-    './src/Studio.tsx'
+    './src/countdown/src/index.tsx'
   ],
   output: {
     path: path.join(__dirname, '/workplace/'),
@@ -33,7 +34,8 @@ module.exports = {
     new webpack.NoErrorsPlugin(),
     new webpack.DefinePlugin({
     'process.env.NODE_ENV': JSON.stringify('development')
-    })
+    }),
+	new ForkCheckerPlugin()
   ],
   node:{
     fs:'empty',
@@ -56,11 +58,6 @@ module.exports = {
       test: /\.css?$/, 
       exclude: /node_modules/,
       loaders: ['style', 'css?modules']
-    },
-	{
-		test: /\.(ts|tsx)?$/,
-		exclude: /node_modules/,
-		loader:require.resolve('./test-loader')
-	}]
+    }]
   }
 };
